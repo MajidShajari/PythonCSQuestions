@@ -1,12 +1,16 @@
 [project]
 name = "quera-qa"
 version = "0.1.0"
-description = ""
+description = "مجموعه‌ای منتخب از سوالات و حل تمرین‌های برنامه‌نویسی پایتون برای مبانی علوم کامپیوتر، مناسب برای امتحان، تمرین و آموزش."
 authors = [
     {name = "Majid Shajari",email = "shijarpy@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.12"
+license = { file = "LICENSE" }
+keywords = [ "exam", "practice", "teaching", "python"]
+[project.urls]
+repository = "https://github.com/MajidShajari/PythonCSQuestions"
+requires-python = ">=3.10"
 dependencies = [
 ]
 
