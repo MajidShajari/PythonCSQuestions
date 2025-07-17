@@ -1,0 +1,388 @@
+[
+    {
+        "question_id": 1,
+        "tests": [
+            { "test_num": 1, "input_str": "Ali 18 19 17\nReza 16 15 14\nexit\n", "expected_outputs": ["Ali"] },
+            { "test_num": 2, "input_str": "Sara 20 20 20\nexit\n", "expected_outputs": ["Sara"] },
+            { "test_num": 3, "input_str": "exit\n" },
+            { "test_num": 4, "input_str": "John 17 17 17\nexit\n" },
+            { "test_num": 5, "input_str": "Anna 18 18\nBob 17 17\nexit\n", "expected_outputs": ["Anna"] },
+            { "test_num": 6, "input_str": "A 18\nB 16\nC 19\nexit\n", "expected_outputs": ["A", "C"] },
+            { "test_num": 7, "input_str": "D 17.1 17.2\nE 16.9 17\nexit\n", "expected_outputs": ["D"] },
+            { "test_num": 8, "input_str": "Ali x y 18\nexit\n", "expected_outputs": ["Ali"] },
+            { "test_num": 9, "input_str": "Ali\nexit\n" },
+            { "test_num": 10, "input_str": "Ali 18 19\nAli 16 16\nexit\n" }
+        ]
+    },
+    {
+        "question_id": 2,
+        "tests": [
+            {
+                "test_num": 1,
+                "input_str": "add;Book A;Author A;2001\nadd;Book B;Author B;1999\nlist\nexit\n",
+                "expected_outputs": ["Book", "B", "-", "Author", "B", "-", "1999", "Book", "A", "-", "Author", "A", "-", "2001"]
+            },
+            {
+                "test_num": 2,
+                "input_str": "add;Book A;Author A;2001\nadd;Book B;Author B;1999\nremove;Book A\nlist\nexit\n",
+                "expected_outputs": ["Book", "B", "-", "Author", "B", "-", "1999"]
+            },
+            {
+                "test_num": 3,
+                "input_str": "add;Book C;Author C;2010\nadd;Book C;Author X;2015\nlist\nexit\n",
+                "expected_outputs": ["Book", "C", "-", "Author", "C", "-", "2010", "Book", "C", "-", "Author", "X", "-", "2015"]
+            },
+            {
+                "test_num": 4,
+                "input_str": "remove;Book Z\nlist\nexit\n",
+                "expected_outputs": []
+            },
+            {
+                "test_num": 5,
+                "input_str": "add;B1;A1;abc\nadd;B2;A2;1995\nlist\nexit\n",
+                "expected_outputs": ["B2", "-", "A2", "-", "1995"]
+            },
+            {
+                "test_num": 6,
+                "input_str": "list\nexit\n",
+                "expected_outputs": []
+            },
+            {
+                "test_num": 7,
+                "input_str": "add;Book A;Author A;2005\nadd;Book B;Author B;2001\nadd;Book C;Author C;2010\nlist\nremove;Book B\nlist\nexit\n",
+                "expected_outputs": [
+                    "Book",
+                    "B",
+                    "-",
+                    "Author",
+                    "B",
+                    "-",
+                    "2001",
+                    "Book",
+                    "A",
+                    "-",
+                    "Author",
+                    "A",
+                    "-",
+                    "2005",
+                    "Book",
+                    "C",
+                    "-",
+                    "Author",
+                    "C",
+                    "-",
+                    "2010",
+                    "Book",
+                    "A",
+                    "-",
+                    "Author",
+                    "A",
+                    "-",
+                    "2005",
+                    "Book",
+                    "C",
+                    "-",
+                    "Author",
+                    "C",
+                    "-",
+                    "2010"
+                ]
+            }
+        ]
+    },
+    {
+        "question_id": 3,
+        "tests": [
+            {
+                "test_num": 1,
+                "input_str": "Hello world hello\n",
+                "expected_outputs": ["3", "7", "hello"]
+            },
+            {
+                "test_num": 2,
+                "input_str": "Python is fun. Python is powerful. Python is great.\n",
+                "expected_outputs": ["9", "16", "is", "python"]
+            },
+            {
+                "test_num": 3,
+                "input_str": "A B C D E F G\n",
+                "expected_outputs": ["7", "7", "a", "b", "c", "d", "e", "f", "g"]
+            },
+            {
+                "test_num": 4,
+                "input_str": "\n",
+                "expected_outputs": []
+            },
+            {
+                "test_num": 5,
+                "input_str": "hello HELLO HeLLo hElLo\n",
+                "expected_outputs": ["4", "4", "hello"]
+            },
+            {
+                "test_num": 6,
+                "input_str": "Hi! Hi? hi. hI,\n",
+                "expected_outputs": ["4", "2", "hi"]
+            }
+        ]
+    },
+    {
+        "question_id": 4,
+        "tests": [
+            {
+                "test_num": 1,
+                "input_str": "add;apple;A fruit\nadd;book;Something to read\nlist\nexit\n",
+                "expected_outputs": ["apple:", "A", "fruit", "book:", "Something", "to", "read"]
+            },
+            {
+                "test_num": 2,
+                "input_str": "add;apple;A fruit\nadd;book;Something to read\nsearch;apple\nexit\n",
+                "expected_outputs": ["A", "fruit"]
+            },
+            {
+                "test_num": 3,
+                "input_str": "add;apple;A fruit\nsearch;pen\nexit\n",
+                "expected_outputs": ["Not", "found"]
+            },
+            {
+                "test_num": 4,
+                "input_str": "add;apple;A fruit\nadd;book;Something to read\nremove;apple\nlist\nexit\n",
+                "expected_outputs": ["book:", "Something", "to", "read"]
+            },
+            {
+                "test_num": 5,
+                "input_str": "list\nexit\n",
+                "expected_outputs": []
+            },
+            {
+                "test_num": 6,
+                "input_str": "add;apple;A fruit\nadd;book;Something to read\nadd;cat;An animal\nsearch;book\nsearch;pen\nremove;apple\nlist\nexit\n",
+                "expected_outputs": ["Something", "to", "read", "Not", "found", "book:", "Something", "to", "read", "cat:", "An", "animal"]
+            }
+        ]
+    },
+    {
+        "question_id": 5,
+        "tests": [
+            { "test_num": 1, "input_str": "add 2 3\nexit\n", "expected_outputs": ["5.0"] },
+            { "test_num": 2, "input_str": "sub 10 4\nexit\n", "expected_outputs": ["6.0"] },
+            { "test_num": 3, "input_str": "mul 3 5\nexit\n", "expected_outputs": ["15.0"] },
+            { "test_num": 4, "input_str": "div 10 2\nexit\n", "expected_outputs": ["5.0"] },
+            { "test_num": 5, "input_str": "div 5 0\nexit\n", "expected_outputs": ["Error"] },
+            { "test_num": 6, "input_str": "pow 2 4\nexit\n", "expected_outputs": ["16.0"] },
+            { "test_num": 7, "input_str": "sqrt 16\nexit\n", "expected_outputs": ["4.0"] },
+            { "test_num": 8, "input_str": "sqrt -9\nexit\n", "expected_outputs": ["Error"] },
+            { "test_num": 9, "input_str": "fact 5\nexit\n", "expected_outputs": ["120"] },
+            { "test_num": 10, "input_str": "fact -3\nexit\n", "expected_outputs": ["Error"] },
+            { "test_num": 11, "input_str": "fact 4.5\nexit\n", "expected_outputs": ["Error"] },
+            { "test_num": 12, "input_str": "add 2 3\nmul 2 4\nexit\n", "expected_outputs": ["5.0", "8.0"] },
+            { "test_num": 13, "input_str": "div 9 a\nexit\n", "expected_outputs": ["Error"] },
+            { "test_num": 14, "input_str": "pow 3\nexit\n", "expected_outputs": ["Error"] },
+            { "test_num": 15, "input_str": "log 10\nexit\n", "expected_outputs": ["Error"] }
+        ]
+    },
+    {
+        "question_id": 6,
+        "tests": [
+            {
+                "test_num": 1,
+                "input_str": "add;apple\nadd;banana\nlist\nexit\n",
+                "expected_outputs": ["apple", "banana"]
+            },
+            {
+                "test_num": 2,
+                "input_str": "add;milk\nadd;milk\nlist\nexit\n",
+                "expected_outputs": ["milk"]
+            },
+            {
+                "test_num": 3,
+                "input_str": "add;bread\nremove;bread\nlist\nexit\n",
+                "expected_outputs": ["No", "items"]
+            },
+            {
+                "test_num": 4,
+                "input_str": "add;tea\nedit;tea;coffee\nlist\nexit\n",
+                "expected_outputs": ["coffee"]
+            },
+            {
+                "test_num": 5,
+                "input_str": "add;tea\nedit;tea;tea\nlist\nexit\n",
+                "expected_outputs": ["tea"]
+            },
+            {
+                "test_num": 6,
+                "input_str": "add;apple\nadd;banana\nedit;apple;banana\nlist\nexit\n",
+                "expected_outputs": ["banana"]
+            },
+            {
+                "test_num": 7,
+                "input_str": "list\nexit\n",
+                "expected_outputs": ["No", "items"]
+            },
+            {
+                "test_num": 8,
+                "input_str": "add;123\nadd;milk\nlist\nexit\n",
+                "expected_outputs": ["milk"]
+            },
+            {
+                "test_num": 9,
+                "input_str": "add;milk\nremove;water\nlist\nremove;milk\nlist\nexit\n",
+                "expected_outputs": ["milk", "No", "items"]
+            },
+            {
+                "test_num": 10,
+                "input_str": "add;apple\nedit;apple;123\nlist\nexit\n",
+                "expected_outputs": ["apple"]
+            },
+            {
+                "test_num": 11,
+                "input_str": "add;milk\nadd;bread\nadd;apple\nedit;bread;butter\nlist\nremove;milk\nlist\nexit\n",
+                "expected_outputs": ["apple", "butter", "milk", "apple", "butter"]
+            }
+        ]
+    },
+    {
+        "question_id": 7,
+        "tests": [
+            {
+                "test_num": 1,
+                "input_str": "Ali;1234567891;computer\nexit\n",
+                "expected_outputs": ["Ali;1234567891;computer"]
+            },
+            {
+                "test_num": 2,
+                "input_str": "Sara;1234567891;art\nexit\n",
+                "expected_outputs": []
+            },
+            {
+                "test_num": 3,
+                "input_str": "Reza;1234567890;computer\nexit\n",
+                "expected_outputs": ["national", "id", "Not", "Valid!"]
+            },
+            {
+                "test_num": 4,
+                "input_str": "Mina;abcdefghij;mathematics\nexit\n",
+                "expected_outputs": []
+            },
+            {
+                "test_num": 5,
+                "input_str": "Hadi;1234567891;Computer\nexit\n",
+                "expected_outputs": ["Hadi;1234567891;computer"]
+            },
+            {
+                "test_num": 6,
+                "input_str": "Ali;1234567891;computer\nReza;1234567890;physics\nexit\n",
+                "expected_outputs": ["national", "id", "Not", "Valid!", "Ali;1234567891;computer"]
+            },
+            {
+                "test_num": 7,
+                "input_str": "Ali;1234567891;computer\nReza;abcdefghij;physics\nSara;1234567899;math\nexit\n",
+                "expected_outputs": ["national", "id", "Not", "Valid!", "Ali;1234567891;computer"]
+            },
+            {
+                "test_num": 8,
+                "input_str": "Ali;;computer\n;1234567891;physics\nReza;1234567891;\nexit\n",
+                "expected_outputs": []
+            },
+            {
+                "test_num": 9,
+                "input_str": "Ali;1234567891;computer\nAli;1234567891;COMPUTER\nexit\n",
+                "expected_outputs": ["Ali;1234567891;computer"]
+            },
+            {
+                "test_num": 10,
+                "input_str": "Ali;1234567891;computer\nReza;1234567890;computer\nSara;1111111111;mathematics\nexit\n",
+                "expected_outputs": ["national", "id", "Not", "Valid!", "Ali;1234567891;computer", "Sara;1111111111;mathematics"]
+            }
+        ]
+    },
+    {
+        "question_id": 8,
+        "tests": [
+            {
+                "test_num": 1,
+                "input_str": "10\n20\n30\n40\n42\nexit\n",
+                "expected_outputs": ["Congratulations!", "You", "guessed", "the", "number.", "Attempts:", "5"],
+                "target": 42
+            },
+            {
+                "test_num": 2,
+                "input_str": "1\n2\n3\n4\n5\n6\n7\n",
+                "expected_outputs": ["Attempts:", "7"],
+                "target": 42
+            },
+            {
+                "test_num": 3,
+                "input_str": "a\nx\n42\n",
+                "expected_outputs": ["Congratulations!", "You", "guessed", "the", "number.", "Attempts:", "1"],
+                "target": 42
+            },
+            {
+                "test_num": 4,
+                "input_str": "42\n",
+                "expected_outputs": ["Congratulations!", "You", "guessed", "the", "number.", "Attempts:", "1"],
+                "target": 42
+            },
+            {
+                "test_num": 5,
+                "input_str": "50\n50\n50\n50\n50\n50\n50\n50\n",
+                "expected_outputs": ["Attempts:", "7"],
+                "target": 42
+            }
+        ]
+    },
+    {
+        "question_id": 9,
+        "tests": [
+            {
+                "test_num": 1,
+                "input_str": "20\n25\n30\nexit\n",
+                "expected_outputs": ["Average:", "25.00", "Max:", "30.0", "Min:", "20.0", "Below", "average:", "20.0"]
+            },
+            {
+                "test_num": 2,
+                "input_str": "10\n10\n10\nexit\n",
+                "expected_outputs": ["Average:", "10.00", "Max:", "10.0", "Min:", "10.0", "Below", "average:"]
+            },
+            {
+                "test_num": 3,
+                "input_str": "42\nexit\n",
+                "expected_outputs": ["Average:", "42.00", "Max:", "42.0", "Min:", "42.0", "Below", "average:"]
+            },
+            {
+                "test_num": 4,
+                "input_str": "15.5\n20\n25.5\nexit\n",
+                "expected_outputs": ["Average:", "20.33", "Max:", "25.5", "Min:", "15.5", "Below", "average:", "15.5", "20.0"]
+            },
+            {
+                "test_num": 5,
+                "input_str": "-10\n-5\n0\nexit\n",
+                "expected_outputs": ["Average:", "-5.00", "Max:", "0.0", "Min:", "-10.0", "Below", "average:", "-10.0"]
+            },
+            {
+                "test_num": 6,
+                "input_str": "abc\n20\nhello\n25\nexit\n",
+                "expected_outputs": ["Average:", "22.50", "Max:", "25.0", "Min:", "20.0", "Below", "average:", "20.0"]
+            },
+            {
+                "test_num": 7,
+                "input_str": "exit\n",
+                "expected_outputs": []
+            },
+            {
+                "test_num": 8,
+                "input_str": "10\n20\n30\n20\nexit\n",
+                "expected_outputs": ["Average:", "20.00", "Max:", "30.0", "Min:", "10.0", "Below", "average:", "10.0"]
+            },
+            {
+                "test_num": 9,
+                "input_str": "10\n10.0\n10.00\nexit\n",
+                "expected_outputs": ["Average:", "10.00", "Max:", "10.0", "Min:", "10.0", "Below", "average:"]
+            },
+            {
+                "test_num": 10,
+                "input_str": "10\n10\n5\nexit\n",
+                "expected_outputs": ["Average:", "8.33", "Max:", "10.0", "Min:", "5.0", "Below", "average:", "5.0"]
+            }
+        ]
+    }
+]
